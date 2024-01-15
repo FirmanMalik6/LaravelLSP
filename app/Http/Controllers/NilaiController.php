@@ -39,7 +39,7 @@ class NilaiController extends Controller
 
         return view('nilai.index', [
             'nilai' => $dataNilai,
-            '$idKelas' => $idKelas
+            'idKelas' => $idKelas
         ]);
     }
 
