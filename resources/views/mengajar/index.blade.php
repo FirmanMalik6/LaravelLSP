@@ -2,8 +2,8 @@
 @section('content')
     <center>
         <b>
-            <h2>LIST DATA GURU</h2>
-            <a href="/guru/create" class="button-primary">TAMBAH DATA</a>
+            <h2>LIST DATA MENGAJAR</h2>
+            <a href="/mengajar/create" class="button-primary">TAMBAH DATA</a>
             @if (session('success'))
                 <div class="alert alert-success"><span class="closebtn" id="closeBtn">&times;</span>{{ session('success') }}
                 </div>
@@ -16,26 +16,22 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>NIP</th>
-                        <th>Nama Guru</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Alamat</th>
-                        <th>Password</th>
-                        <th>Action</th>
+                        <th>GURU</th>
+                        <th>MATA PELAJARAN</th>
+                        <th>KELAS</th>
+                        <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($guru as $g)
+                    @foreach ($mengajar as $meng)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $g->nip }}</td>
-                            <td>{{ $g->nama_guru }}</td>
-                            <td>{{ $g->jk == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
-                            <td>{{ $g->alamat }}</td>
-                            <td>{{ $g->password }}</td>
+                            <td>{{ $meng->guru->nama_guru }}</td>
+                            <td>{{ $meng->mapel->nama_mapel }}</td>
+                            <td>{{ $meng->kelas->kelas }} {{ $meng->kelas->jurusan }} {{ $meng->kelas->rombel }}</td>
                             <td style="text-align: center">
-                                <a href="/guru/edit/{{ $g->id }}" class="button-warning">EDIT</a>
-                                <a href="/guru/destroy/{{ $g->id }}" onclick="return confirm('Yakin Hapus?')"
+                                <a href="/mengajar/edit/{{ $meng->id }}" class="button-warning">EDIT</a>
+                                <a href="/mengajar/destroy/{{ $meng->id }}" onclick="return confirm('Yakin Hapus?')"
                                     class="button-danger">HAPUS</a>
                             </td>
                         </tr>

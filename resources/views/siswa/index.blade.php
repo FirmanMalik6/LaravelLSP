@@ -2,8 +2,8 @@
 @section('content')
     <center>
         <b>
-            <h2>LIST DATA GURU</h2>
-            <a href="/guru/create" class="button-primary">TAMBAH DATA</a>
+            <h2>LIST DATA SISWA</h2>
+            <a href="/siswa/create" class="button-primary">TAMBAH DATA</a>
             @if (session('success'))
                 <div class="alert alert-success"><span class="closebtn" id="closeBtn">&times;</span>{{ session('success') }}
                 </div>
@@ -16,26 +16,28 @@
                 <thead>
                     <tr>
                         <th>NO</th>
-                        <th>NIP</th>
-                        <th>Nama Guru</th>
+                        <th>NIS</th>
+                        <th>Nama Siswa</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
+                        <th>Kelas</th>
                         <th>Password</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($guru as $g)
+                    @foreach ($siswa as $s)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $g->nip }}</td>
-                            <td>{{ $g->nama_guru }}</td>
-                            <td>{{ $g->jk == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
-                            <td>{{ $g->alamat }}</td>
-                            <td>{{ $g->password }}</td>
+                            <td>{{ $s->nis }}</td>
+                            <td>{{ $s->nama_siswa }}</td>
+                            <td>{{ $s->jk == 'L' ? 'Laki-Laki' : 'Perempuan' }}</td>
+                            <td>{{ $s->alamat }}</td>
+                            <td>{{ $s->kelas->kelas }} {{ $s->kelas->jurusan }} {{ $s->kelas->rombel }}</td>
+                            <td>{{ $s->password }}</td>
                             <td style="text-align: center">
-                                <a href="/guru/edit/{{ $g->id }}" class="button-warning">EDIT</a>
-                                <a href="/guru/destroy/{{ $g->id }}" onclick="return confirm('Yakin Hapus?')"
+                                <a href="/siswa/edit/{{ $s->id }}" class="button-warning">EDIT</a>
+                                <a href="/siswa/destroy/{{ $s->id }}" onclick="return confirm('Yakin Hapus?')"
                                     class="button-danger">HAPUS</a>
                             </td>
                         </tr>

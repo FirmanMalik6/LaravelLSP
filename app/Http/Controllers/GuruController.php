@@ -31,7 +31,7 @@ class GuruController extends Controller
             'password' => ['required']
         ]);
         Guru::create($data_guru);
-        return redirect('/guru/index')->with('success', 'Data guru berhasil di tambah');
+        return redirect('/guru/index')->with('success', 'Data guru berhasil ditambah');
     }
 
     public function edit(Guru $guru)
@@ -65,6 +65,6 @@ class GuruController extends Controller
 
         $guru->delete();
 
-        return back()->with('success', "Data guru berhasil dihapus");
+        return back()->with('success', 'Data guru berhasil dihapus');
     }
 }

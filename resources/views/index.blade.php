@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <title>Penilaian Siswa</title>
 </head>
 
 <body>
@@ -19,15 +19,15 @@
     <div class="kiri-atas">
         <fieldset>
             <center>
-                <button class="button-primary" onclick="tampilkan_login_admin()">Admin</button>
-                <button class="button-primary" onclick="tampilkan_login_guru()">Guru</button>
-                <button class="button-primary" onclick="tampilkan_login_siswa()">Siswa</button>
+                <button onclick="tampilkan_login_admin()" class="button-primary">Admin</button>
+                <button onclick="tampilkan_login_guru()" class="button-primary">Guru</button>
+                <button onclick="tampilkan_login_siswa()" class="button-primary">Siswa</button>
                 <hr>
-                Pilih login yang sesuai dengan posisi anda
+                Pilih login yang sesuai dengan posisi Anda
                 <hr>
             </center>
-
-            <div id="login_admin" class="container-login" style="display: none">
+            {{-- ----------------------------------------------------------------------------------------------- --}}
+            <div class="container-login" id="login_admin" style="display: none">
                 <center>
                     <b>Login Admin</b>
                     <p>{{ session('error') }}</p>
@@ -40,22 +40,23 @@
                             <td width="25%" style="text-align: right"><input type="text" name="kode_admin"
                                     maxlength="25" required></td>
                         </tr>
+
                         <tr>
                             <td width="25%"><strong>Password</strong></td>
                             <td width="25%" style="text-align: right"><input type="password" name="password"
                                     maxlength="10" required></td>
                         </tr>
                     </table>
-                    <button class="button-submit" type="submit" name="button">Login</button>
+                    <button class="button-submit" type="submit" name="button">LOGIN</button>
                 </form>
             </div>
 
-            <div id="login_guru" class="container-login" style="display: none">
+            <div class="container-login" id="login_guru" style="display: none">
                 <center>
                     <b>Login Guru</b>
                     <p>{{ session('error') }}</p>
                 </center>
-
+                {{-- ----------------------------------------------------------------------------------------------- --}}
                 <form action="/login_guru" method="POST">
                     @csrf
                     <table>
@@ -64,17 +65,18 @@
                             <td width="25%" style="text-align: right"><input type="text" name="nip"
                                     maxlength="25" required></td>
                         </tr>
+
                         <tr>
                             <td width="25%"><strong>Password</strong></td>
                             <td width="25%" style="text-align: right"><input type="password" name="password"
                                     maxlength="10" required></td>
                         </tr>
                     </table>
-                    <button class="button-submit" type="submit" name="button">Login</button>
+                    <button class="button-submit" type="submit" name="button">LOGIN</button>
                 </form>
             </div>
-
-            <div id="login_siswa" class="container-login" style="display: none">
+            {{-- ----------------------------------------------------------------------------------------------- --}}
+            <div class="container-login" id="login_siswa" style="display: none">
                 <center>
                     <b>Login Siswa</b>
                     <p>{{ session('error') }}</p>
@@ -88,13 +90,14 @@
                             <td width="25%" style="text-align: right"><input type="text" name="nis"
                                     maxlength="25" required></td>
                         </tr>
+
                         <tr>
                             <td width="25%"><strong>Password</strong></td>
                             <td width="25%" style="text-align: right"><input type="password" name="password"
                                     maxlength="10" required></td>
                         </tr>
                     </table>
-                    <button class="button-submit" type="submit" name="button">Login</button>
+                    <button class="button-submit" type="submit" name="button">LOGIN</button>
                 </form>
             </div>
         </fieldset>
@@ -102,7 +105,8 @@
 
     <div class="kanan">
         <center>
-            <h1>SELAMAT DATANG
+            <h1>
+                SELAMAT DATANG
                 <br>
                 DI WEBSITE PENILAIAN SMKN 1 CIBINONG
             </h1>
@@ -114,7 +118,7 @@
             <b>
                 <p class="mar">Gallery</p>
                 <div class="gallery">
-                    <img src="{{ asset('img/g2.jpg') }}" alt="" />
+                    <img src="{{ asset('img/g2.jpg') }}" />
                     <div class="deskripsi">SMK BISA {{ date('Y') }}</div>
                 </div>
             </b>

@@ -9,15 +9,18 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('index');
     }
 
-    public function home() {
+    public function home()
+    {
         return view('home');
     }
 
-    public function loginAdmin(request $request) {
+    public function loginAdmin(Request $request)
+    {
         $administrator = Administrator::where('id_admin', $request->kode_admin)->where('password', $request->password)->first();
 
         if (!$administrator) {
@@ -31,25 +34,27 @@ class IndexController extends Controller
 
         return redirect('/home');
     }
-    
-    public function loginGuru(request $request) {
+
+    public function loginGuru(Request $request)
+    {
         $guru = Guru::where('nip', $request->nip)->where('password', $request->password)->first();
 
         if (!$guru) {
-            return back()->with('error', 'NIP/passwrd salah');
+            return back()->with('error', 'NIP/password salah');
         }
 
         session([
             'role' => 'guru',
             'nama_guru' => $guru->nama_guru,
-            'id' => $guru -> id
+            'id' => $guru->id
         ]);
 
         return redirect('/home');
     }
-    
-    public function loginSiswa(request $request) {
-        $siswa = Siswa::where('nis', $request->nis)->where('password', $request->password)->first();
+
+    public function loginSiswa(Request $request)
+    {
+        $siswa = Siswa::where('nis', $request->$request->nis)->where('password', $request->password)->first();
 
         if (!$siswa) {
             return back()->with('error', 'NIS/password salah');
@@ -58,13 +63,14 @@ class IndexController extends Controller
         session([
             'role' => 'siswa',
             'nama_siswa' => $siswa->nama_siswa,
-            'id' => $siswa -> id
+            'id' => $siswa->id
         ]);
 
         return redirect('/home');
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         $request->session()->invalidate();
         return redirect('/');
     }

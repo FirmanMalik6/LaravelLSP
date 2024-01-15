@@ -1,8 +1,8 @@
-@extends('Layout.main')
-
+@extends('layout.main')
 @section('content')
     <center>
-        <h1>Selamat Datang {{ session('role') }}
+        <h1>
+            Selamat Datang {{ session('role') }},
             @if (session('role') == 'guru')
                 {{ session('nama_guru') }}
             @elseif (session('role') == 'siswa')
@@ -13,6 +13,3 @@
         </h1>
     </center>
 @endsection
-</body>
-
-</html>
