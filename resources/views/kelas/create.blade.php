@@ -25,10 +25,6 @@
                 @endforeach
             </select>
 
-            <label>Jenis Kelamin </label>
-            <input type="radio" name="jk" value="L">Laki-laki
-            <input type="radio" name="jk" value="P">Perempuan
-
             <label for="rombel">Rombel</label>
             <input type="number" name="rombel" id="rombel" max="4" min="1">
 

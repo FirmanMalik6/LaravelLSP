@@ -54,7 +54,7 @@ class IndexController extends Controller
 
     public function loginSiswa(Request $request)
     {
-        $siswa = Siswa::where('nis', $request->$request->nis)->where('password', $request->password)->first();
+        $siswa = Siswa::where('nis', $request->nis)->where('password', $request->password)->first();
 
         if (!$siswa) {
             return back()->with('error', 'NIS/password salah');
