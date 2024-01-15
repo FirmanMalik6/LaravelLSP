@@ -46,7 +46,7 @@
 
                             @if (session('role') == 'guru')
                                 <td style="text-align: center">
-                                    <a href="/nilai/edit/{{ $idkelas }}/{{ $each->id }}"
+                                    <a href="/nilai/edit/{{ $idKelas }}/{{ $each->id }}"
                                         class="button-warning">EDIT</a>
                                     <a href="/nilai/destroy/{{ $each->id }}" onclick="return confirm('Yakin Hapus?')"
                                         class="button-danger">HAPUS</a>
