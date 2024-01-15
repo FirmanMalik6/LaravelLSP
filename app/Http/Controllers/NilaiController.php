@@ -49,7 +49,7 @@ class NilaiController extends Controller
         return view('nilai.create', [
             'mengajar' => $mengajar->get(),
             'siswa' => Siswa::where('kelas_id', $kelas->id)->get(),
-            'IdKelas' => $kelas->id
+            'idKelas' => $kelas->id
         ]);
     }
 
