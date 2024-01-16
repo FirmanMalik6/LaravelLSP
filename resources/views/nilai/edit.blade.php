@@ -20,9 +20,7 @@
             <label for="siswa_id">Siswa</label>
             <select name="siswa_id" id="siswa_id">
                 @foreach ($siswa as $each)
-                    @if ($nilai->siswa_id == $each->id)
-                        <option value="{{ $each->id }}" @if ($each->id == $nilai->mengajar_id) selected @endif>
-                            {{ $each->nama_siswa }}</option>
+                        <option value="{{ $each->id }}" @if ($each->id == $nilai->siswa_id) selected @endif>{{ $each->nama_siswa }}</option>
                 @endforeach
             </select>
 

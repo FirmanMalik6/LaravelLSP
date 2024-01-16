@@ -84,10 +84,10 @@ class NilaiController extends Controller
         ]);
     }
 
-    public function update(Request $request, Nilai $nilai, Kelas $kelas)
+    public function update(Request $request, Kelas $kelas, Nilai $nilai)
     {
         $data_nilai = $request->validate([
-            'nilai' => ['required'],
+            'mengajar_id' => ['required'],
             'siswa_id' => ['required'],
             'uh' => ['required', 'numeric'],
             'uts' => ['required', 'numeric'],
