@@ -12,11 +12,13 @@ class Nilai extends Model
     protected $table = 'nilais';
     protected $guarded = ['id'];
 
-    public function mengajar() {
+    public function mengajar()
+    {
         return $this->belongsTo(Mengajar::class, 'mengajar_id', 'id');
     }
 
-    public function siswa() {
+    public function siswa()
+    {
         return $this->belongsTo(Siswa::class, 'siswa_id', 'id');
     }
 }

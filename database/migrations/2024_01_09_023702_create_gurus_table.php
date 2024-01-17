@@ -17,7 +17,7 @@ class CreateGurusTable extends Migration
             $table->id();
             $table->string('nip')->unique();
             $table->string('nama_guru');
-            $table->enum('jk', ['L','P']);
+            $table->enum('jk', ['L', 'P']);
             $table->text('alamat');
             $table->string('password');
             $table->timestamps();

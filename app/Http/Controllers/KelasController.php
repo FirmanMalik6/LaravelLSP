@@ -38,7 +38,7 @@ class KelasController extends Controller
 
         $kelas = Kelas::firstOrNew($data_kelas);
 
-        if ($kelas->exist) {
+        if ($kelas->exists) {
             return back()->with('error', 'Data kelas yang dimasukkan sudah ada');
         } else
             $kelas->save();

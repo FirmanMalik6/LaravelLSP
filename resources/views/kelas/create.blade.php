@@ -4,7 +4,9 @@
         <h2 align="center">Tambah Data Kelas</h2>
 
         @if ($errors->any())
-            <p class="text-danger">{{ session('error') }}</p>
+            @foreach ($errors->all() as $error)
+                <p class="text-danger">{{ $error }}</p>
+            @endforeach
         @endif
 
         <form action="/kelas/store" method="POST">

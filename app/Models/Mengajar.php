@@ -13,16 +13,19 @@ class Mengajar extends Model
     protected $table = 'mengajars';
     protected $guarded = ['id'];
     protected $primarykey = 'id';
-    
-    public function guru() {
+
+    public function guru()
+    {
         return $this->belongsTo(Guru::class, 'guru_id', 'id');
     }
 
-    public function mapel() {
+    public function mapel()
+    {
         return $this->belongsTo(Mapel::class, 'mapel_id', 'id');
     }
 
-    public function kelas() {
+    public function kelas()
+    {
         return $this->belongsTo(Kelas::class, 'kelas_id', 'id');
     }
 }

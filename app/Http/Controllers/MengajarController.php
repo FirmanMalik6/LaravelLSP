@@ -34,11 +34,11 @@ class MengajarController extends Controller
             'kelas_id' => ['required']
         ]);
 
-        $mengajar = Mengajar::firstOrNew($data_mengajar);
-        if ($mengajar->exists) {
-            return back()->with('error', 'Data mengajar yang dimasukkan salah');
+        $mengajar = Mengajar::where('mapel_id', $request->mapel_id)->where('kelas_id', $request->kelas_id)->first();
+        if ($mengajar == true) {
+            return back()->with('error', 'Data mengajar yang dimasukkan sudah ada');
         } else {
-            $mengajar->save();
+            Mengajar::create($data_mengajar);
             return redirect('/mengajar/index')->with('success', 'Data mengajar berhasil ditambah');
         }
     }
