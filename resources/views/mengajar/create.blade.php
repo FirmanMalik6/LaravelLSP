@@ -27,7 +27,7 @@
                     <option value="{{ $k->id }}">{{ $k->kelas }} {{ $k->jurusan }} {{ $k->rombel }}</option>
                 @endforeach
             </select>
-
-            <button class="button-submit" type="submit">Simpan</button>
-        </form>
-    @endsection
+    </div>
+    <button class="button-submit" type="submit">Simpan</button>
+    </form>
+@endsection
