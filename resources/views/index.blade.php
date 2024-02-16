@@ -50,13 +50,12 @@
                     <button class="button-submit" type="submit" name="button">LOGIN</button>
                 </form>
             </div>
-
+            {{-- ----------------------------------------------------------------------------------------------- --}}
             <div class="container-login" id="login_guru" style="display: none">
                 <center>
                     <b>Login Guru</b>
                     <p>{{ session('error') }}</p>
                 </center>
-                {{-- ----------------------------------------------------------------------------------------------- --}}
                 <form action="/login_guru" method="POST">
                     @csrf
                     <table>

@@ -29,7 +29,7 @@
     <div class="content">
         @yield('content')
     </div>
-    @include('partials.footer');
+    @include('partials.footer')
 </body>
 <script src="/js/script.js"></script>
 

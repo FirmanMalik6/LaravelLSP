@@ -35,7 +35,7 @@ Route::controller(IndexController::class)->group(function () {
 Route::middleware('CheckUserRole:admin')->group(function () {
     Route::controller(GuruController::class)->prefix('guru')->group(function () {
         Route::get('/index', 'index');
-        Route::get('/create', 'create');
+        Route::get('/createSSSsa', 'create');
         Route::post('/store', 'store');
         Route::get('/edit/{guru}', 'edit');
         Route::post('/update/{guru}', 'update');
